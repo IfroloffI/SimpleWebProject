@@ -3,7 +3,6 @@
   height: auto;
   display: flex;
   align-items: center;
-  padding-top: 40px;
   flex-direction: column;
 }
 
@@ -19,19 +18,19 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
-  border: 1px solid lightblue;
-  font-family: 'Times New Roman', Times, serif;
+  border: 1px solid lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.post:hower {
-  box-shadow: rgba(100, 100, 111, 0.2);
+.post:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   cursor: pointer;
 }
-
 .post .title {
   flex: 20%;
-  border-bottom: 1px solid lightblue;
+  border-bottom: 1px solid lightgray;
   background-color: dodgerblue;
   display: grid;
   place-content: center;
@@ -46,27 +45,26 @@ body {
 
 .post .footer {
   flex: 20%;
-  border-top: 1px solid lightblue;
+  border-top: 1px solid lightgray;
   display: flex;
   align-items: center;
   padding-left: 15px;
   background-color: dodgerblue;
   color: white;
   border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-/* CREATE POST PAGE */
+/* CREATE POST PAGE CSS */
 
 .createPostPage {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .formContainer {
   display: flex;
   flex-direction: column;
@@ -74,7 +72,7 @@ body {
   width: 500px;
   height: auto;
   padding: 20px;
-  border: 5px solid darkblue;
+  border: 5px solid dodgerblue;
   border-radius: 5px;
 }
 
@@ -92,14 +90,14 @@ body {
   margin-top: 15px;
   height: 40px;
   border: none;
-  background-color: lightblue;
+  background-color: lightskyblue;
   border-radius: 5px;
   color: white;
 }
 
 .formContainer button:hover {
   cursor: pointer;
-  background-color: darkblue;
+  background-color: dodgerblue;
 }
 
 span {
@@ -109,17 +107,52 @@ span {
 /* NAVBAR */
 
 .navbar {
-  margin-top: -35px;
   width: 100%;
   height: 70px;
-  background-color: darkblue;
+  background-color: dodgerblue;
   display: flex;
   align-items: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .navbar a {
   margin-left: 20px;
   text-decoration: none;
   color: white;
+}
+
+/* INDIVIDUAL POST */
+.postPage {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.leftSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+.rightSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+#individual {
+  height: 500px;
+  width: 600px;
+}
+
+#individual .title,
+#individual .footer {
+  font-size: 30px;
+}
+
+#individual .body {
+  font-size: 25px;
 }
