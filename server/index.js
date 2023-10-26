@@ -7,9 +7,12 @@ app.use(express.json());
 app.use(cors());
 
 const db = require("./models");
+
 // Routers
 const postRouter = require('./routes/posts');
 app.use("/posts", postRouter);
+const commentRouter = require('./routes/comments');
+app.use("/comments", commentRouter);
 
 db.sequelize.sync().then(() => {
     app.listen(port, () => {
