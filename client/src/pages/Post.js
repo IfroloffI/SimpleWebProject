@@ -15,18 +15,30 @@ function Post() {
     axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
       setComments(response.data);
     });
-  }, []);
+  });
 
   const addComment = () => {
     axios
-      .post("http://localhost:3001/comments", {
-        commentText: newComment,
-        postId: id,
-      })
+      .post(
+        "http://localhost:3001/comments",
+        {
+          commentText: newComment,
+          postId: id,
+        },
+        {
+          headers: {
+            accessToken: sessionStorage.getItem("accessToken"),
+          },
+        }
+      )
       .then((response) => {
-        const commentToAdd = { commentText: newComment };
-        setComments([...comments, commentToAdd]);
-        setNewComment("");
+        if (response.data.error) {
+          alert(response.data.error);
+        } else {
+          const commentToAdd = { commentText: newComment };
+          setComments([...comments, commentToAdd]);
+          setNewComment("");
+        }
       });
   };
 
