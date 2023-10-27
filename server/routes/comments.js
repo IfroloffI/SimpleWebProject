@@ -9,9 +9,9 @@ router.get("/:postId", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-    const comment = req.body;
-    await comments.create(comment);
-    res.json(comment);
+  const comment = req.body;
+  await comments.create(comment);
+  res.json(comment);
 });
 
 module.exports = router;

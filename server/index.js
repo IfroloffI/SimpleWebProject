@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = 3001;
-const cors = require('cors');
+const cors = require("cors");
 
 app.use(express.json());
 app.use(cors());
@@ -9,13 +9,15 @@ app.use(cors());
 const db = require("./models");
 
 // Routers
-const postRouter = require('./routes/posts');
+const postRouter = require("./routes/posts");
 app.use("/posts", postRouter);
-const commentRouter = require('./routes/comments');
+const commentRouter = require("./routes/comments");
 app.use("/comments", commentRouter);
+const userRouter = require("./routes/users");
+app.use("/auth", userRouter);
 
 db.sequelize.sync().then(() => {
-    app.listen(port, () => {
-        console.log("Server is running on port " + port);
-    });
+  app.listen(port, () => {
+    console.log("Server is running on port " + port);
+  });
 });
