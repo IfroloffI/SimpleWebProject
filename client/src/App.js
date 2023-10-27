@@ -5,6 +5,7 @@ import CreatePost from "./pages/CreatePost";
 import Post from "./pages/Post";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/post/:id" Component={Post} />
           <Route exact path="/register" Component={Register} />
           <Route exact path="/login" Component={Login} />
+          <Route exact path="*" Component={PageNotFound} />
         </Routes>
       </BrowserRouter>
     </div>
